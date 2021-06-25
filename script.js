@@ -7,12 +7,13 @@ const max = 50;
 const content = document.querySelector('#content');
 let number = Math.floor(Math.random() * (max - min) + min);
 
-function iniciar() {
+function init() {
     content.innerHTML = `
     <div class="input-group mb-3 container">
         <input type="text" class="form-control mt-3" placeholder="Ingrese un numero enetre 1 y 50" aria-label="Recipient's username" aria-describedby="button-addon2" id="input">
         <button class="btn btn-outline-secondary mt-3" type="button" id="button-addon2" onclick="comparator(number)">Enviar</button>
     </div>`
+    console.log(number)
 }
 
 function comparator(number) {
@@ -92,8 +93,8 @@ function stop() {
 function restart() {
     clearInterval(modifier);
     document.getElementById("hms").innerHTML = "00:00:00";
-    hour = 0; 
-    minute = 0; 
+    hour = 0;
+    minute = 0;
     second = 0;
     document.querySelector(".start").addEventListener("click", iniciar);
 }
